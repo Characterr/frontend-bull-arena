@@ -23,6 +23,11 @@ h1 {
   text-align: center;
 }
 
+img{
+  width: 200px;
+  height: 200px;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
