@@ -1,5 +1,4 @@
-import { Component, ReactNode } from "react";
-import { PureComponent } from "react";
+import { Component } from "react";
 import { getRandom } from "./Utils";
 import { SELECTED_APPLAUSE, MP3_FILES, SRC_MP3 } from "./Constants";
 import './Matador.css'

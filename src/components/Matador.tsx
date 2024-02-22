@@ -9,15 +9,19 @@ interface MatadorOptions {
     matadorPosition: number
 }
 
+/* Save to global memory. Get access to all objects (matador). 
+Saving the previous type of applause */
 let prevApplause: number;
 
 export const Matador = memo((props: MatadorOptions) => {
     let [nameApplause, setNameApplause] = useState(MP3_FILES[props.applause]);
 
+    /* Change of applause */
     useEffect((): any => {
         setNameApplause(MP3_FILES[props.applause]);
     }), [props.applause];
 
+    /* Change of matadorPosition */
     useEffect(() => {
         function movingMatador(e: CustomEventInit) {
             let bullPosition = e.detail.position;
@@ -41,7 +45,7 @@ export const Matador = memo((props: MatadorOptions) => {
             <img src="./matador.png" alt="i am matador" />
         </div>
     )
-},
+}, /* Render , only if the condition is met */
     (prev, next) => {
         let isIdenticalProps = (next.applause == SELECTED_APPLAUSE && prevApplause != SELECTED_APPLAUSE) ? false : true;
         prevApplause = next.applause;
